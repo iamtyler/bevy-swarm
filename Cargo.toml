@@ -1,0 +1,16 @@
+[package]
+name = "swarm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = { version = "0.6.1" }
+rand = "0.8.5"
+
+[features]
+default = ["fast-compile"]
+fast-compile = ["bevy/dynamic"]
+
+[profile.release]
+lto = "thin"
+opt-level = 3
